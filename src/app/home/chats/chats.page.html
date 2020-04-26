@@ -1,0 +1,55 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-title color="primary">Chats</ion-title>
+	</ion-toolbar>
+</ion-header>
+<ion-searchbar
+	placeholder="Search..."
+	(ionChange)="onSearchChange($event)"
+	[debounce]="250"
+></ion-searchbar>
+
+<ion-content class="ion-no-padding">
+	<ion-grid>
+		<ion-row>
+			<ion-col size="12">
+				<ion-list>
+					<ion-item-sliding *ngFor="let item of loadedChats">
+						<ion-item
+							[routerLink]="['/', 'home', 'tabs', 'chats', item.id]"
+							detail
+						>
+							<ion-thumbnail>
+								<ion-img [src]="item.imageUrl"></ion-img>
+							</ion-thumbnail>
+							<ion-label>
+								<h3>{{ item.userName}}</h3>
+								<p>{{ item.description }}</p>
+							</ion-label>
+						</ion-item>
+
+						<ion-item-options side="start">
+							<ion-item-option color="primary">
+								<ion-icon slot="icon-only" name="chatbubbles">Read</ion-icon>
+							</ion-item-option>
+
+							<ion-item-option style="background-color: lightgray;">
+								<ion-icon slot="icon-only" name="attach">Pin</ion-icon>
+							</ion-item-option>
+						</ion-item-options>
+
+						<ion-item-options side="end">
+							<ion-item-option style="background-color: lightgray;">
+								<ion-icon slot="icon-only" name="text">More</ion-icon>
+							</ion-item-option>
+
+							<ion-item-option color="primary">
+								<ion-icon slot="icon-only" name="card">Archive</ion-icon>
+							</ion-item-option>
+						</ion-item-options>
+					</ion-item-sliding>
+				</ion-list>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>
