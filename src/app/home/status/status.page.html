@@ -1,9 +1,73 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>status</ion-title>
-  </ion-toolbar>
+	<ion-toolbar>
+		<ion-title style="font-size: 30px;">Status</ion-title>
+	</ion-toolbar>
+	<ion-searchbar
+		placeholder="Search..."
+		(ionChange)="onSearchChange($event)"
+		[debounce]="250"
+	></ion-searchbar>
 </ion-header>
 
 <ion-content>
+	<ion-grid>
+		<ion-row>
+			<ion-col size="12">
+				<ion-list>
+					<ion-item>
+						<ion-avatar style="background-color: lightgray;">
+							<ion-img [src]="loadedPersons[0].imageUrl"></ion-img>
+							<ion-badge color="primary" slot="start">+</ion-badge>
+						</ion-avatar>
+						<ion-label>
+							<h4>My Status</h4>
+							<p>Add to my status</p>
+						</ion-label>
+						<ion-icon
+							slot="end"
+							name="camera"
+							color="primary"
+							(click)="onCamera()"
+						></ion-icon>
+						<ion-icon
+							slot="end"
+							name="brush"
+							color="primary"
+							(click)="onPen()"
+						></ion-icon>
+					</ion-item>
+				</ion-list>
+			</ion-col>
+		</ion-row>
 
+		<ion-row>
+			<ion-col size="12">
+				<ion-list detail>
+					<ion-item-sliding
+						*ngFor="let person of loadedPersons.slice(1)"
+						#slidingControl
+					>
+						<ion-item>
+							<ion-avatar style="background-color: lightgray;">
+								<ion-img [src]="person.imageUrl"></ion-img>
+							</ion-avatar>
+							<ion-label>
+								<h4>{{ person.userName }}</h4>
+								<p>Posted moments ago</p>
+							</ion-label>
+						</ion-item>
+
+						<ion-item-options side="end">
+							<ion-item-option
+								style="background-color: lightgray;"
+								(click)="onMute(slidingControl)"
+							>
+								<p>Mute</p>
+							</ion-item-option>
+						</ion-item-options>
+					</ion-item-sliding>
+				</ion-list>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
 </ion-content>

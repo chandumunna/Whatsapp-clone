@@ -1,27 +1,27 @@
 <ion-header>
 	<ion-toolbar>
-		<ion-title color="primary">Chats</ion-title>
+		<ion-title color="primary" style="font-size: 30px;">Chats</ion-title>
 	</ion-toolbar>
+	<ion-searchbar
+		placeholder="Search..."
+		(ionChange)="onSearchChange($event)"
+		[debounce]="250"
+	></ion-searchbar>
 </ion-header>
-<ion-searchbar
-	placeholder="Search..."
-	(ionChange)="onSearchChange($event)"
-	[debounce]="250"
-></ion-searchbar>
 
 <ion-content class="ion-no-padding">
 	<ion-grid>
 		<ion-row>
 			<ion-col size="12">
 				<ion-list>
-					<ion-item-sliding *ngFor="let item of loadedChats">
+					<ion-item-sliding *ngFor="let item of loadedChats" #slidingControl>
 						<ion-item
 							[routerLink]="['/', 'home', 'tabs', 'chats', item.id]"
 							detail
 						>
-							<ion-thumbnail>
+							<ion-avatar style="background-color: lightgray;">
 								<ion-img [src]="item.imageUrl"></ion-img>
-							</ion-thumbnail>
+							</ion-avatar>
 							<ion-label>
 								<h3>{{ item.userName}}</h3>
 								<p>{{ item.description }}</p>
@@ -29,21 +29,30 @@
 						</ion-item>
 
 						<ion-item-options side="start">
-							<ion-item-option color="primary">
+							<ion-item-option color="primary" (click)="onRead(slidingControl)">
 								<ion-icon slot="icon-only" name="chatbubbles">Read</ion-icon>
 							</ion-item-option>
 
-							<ion-item-option style="background-color: lightgray;">
+							<ion-item-option
+								style="background-color: lightgray;"
+								(click)="onPin(slidingControl)"
+							>
 								<ion-icon slot="icon-only" name="attach">Pin</ion-icon>
 							</ion-item-option>
 						</ion-item-options>
 
 						<ion-item-options side="end">
-							<ion-item-option style="background-color: lightgray;">
+							<ion-item-option
+								style="background-color: lightgray;"
+								(click)="onMore(slidingControl)"
+							>
 								<ion-icon slot="icon-only" name="text">More</ion-icon>
 							</ion-item-option>
 
-							<ion-item-option color="primary">
+							<ion-item-option
+								color="primary"
+								(click)="onArchive(slidingControl)"
+							>
 								<ion-icon slot="icon-only" name="card">Archive</ion-icon>
 							</ion-item-option>
 						</ion-item-options>
