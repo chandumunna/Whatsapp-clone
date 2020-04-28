@@ -14,9 +14,11 @@
 		<ion-row>
 			<ion-col size="12">
 				<ion-list>
-					<ion-item>
+					<ion-item
+						[routerLink]="['/', 'homee', 'tabs', 'status', loadedStatuses[0].statusId]"
+					>
 						<ion-avatar style="background-color: lightgray;">
-							<ion-img [src]="loadedPersons[0].imageUrl"></ion-img>
+							<ion-img [src]="loadedStatuses[0].imageUrl"></ion-img>
 							<ion-badge color="primary" slot="start">+</ion-badge>
 						</ion-avatar>
 						<ion-label>
@@ -44,10 +46,12 @@
 			<ion-col size="12">
 				<ion-list detail>
 					<ion-item-sliding
-						*ngFor="let person of loadedPersons.slice(1)"
+						*ngFor="let person of loadedStatuses.slice(1)"
 						#slidingControl
 					>
-						<ion-item>
+						<ion-item
+							[routerLink]="['/', 'home', 'tabs', 'status' person.statusId]"
+						>
 							<ion-avatar style="background-color: lightgray;">
 								<ion-img [src]="person.imageUrl"></ion-img>
 							</ion-avatar>

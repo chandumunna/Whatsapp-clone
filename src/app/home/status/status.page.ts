@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Chat } from '../chats/chat.model';
-import { ChatsService } from '../chats/chats.service';
 import { IonItemSliding } from '@ionic/angular';
+import { StatusService } from './status.service';
+import { Status } from './status.model';
 
 @Component({
 	selector: 'app-status',
@@ -9,12 +9,12 @@ import { IonItemSliding } from '@ionic/angular';
 	styleUrls: ['./status.page.scss']
 })
 export class StatusPage implements OnInit {
-	loadedPersons: Chat[];
+	loadedStatuses: Status[];
 
-	constructor(private chatService: ChatsService) {}
+	constructor(private statusService: StatusService) {}
 
 	ngOnInit() {
-		this.loadedPersons = this.chatService.Chats;
+		this.loadedStatuses = this.statusService.Statuses;
 	}
 	onMute(slideCtrl: IonItemSliding) {
 		console.log('Person muted!!!');

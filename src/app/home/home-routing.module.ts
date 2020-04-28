@@ -27,8 +27,20 @@ const routes: Routes = [
 						path: '',
 						loadChildren: () =>
 							import('./status/status.module').then(m => m.StatusPageModule)
+					},
+					{
+						path: '/:statusId',
+						loadChildren: () =>
+							import('./status/status-detail/status-detail.module').then(
+								m => m.StatusDetailPageModule
+							)
 					}
 				]
+			},
+			{
+				path: 'camera',
+				loadChildren: () =>
+					import('./camera/camera.module').then(m => m.CameraPageModule)
 			},
 			{
 				path: 'calls',
@@ -47,6 +59,13 @@ const routes: Routes = [
 						path: '',
 						loadChildren: () =>
 							import('./chats/chats.module').then(m => m.ChatsPageModule)
+					},
+					{
+						path: '/:chatId',
+						loadChildren: () =>
+							import('./chats/chat-detail/chat-detail.module').then(
+								m => m.ChatDetailPageModule
+							)
 					}
 				]
 			},

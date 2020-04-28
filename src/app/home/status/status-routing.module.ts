@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: StatusPage
+  },
+  {
+    path: 'status-detail',
+    loadChildren: () => import('./status-detail/status-detail.module').then( m => m.StatusDetailPageModule)
   }
 ];
 
