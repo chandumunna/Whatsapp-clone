@@ -15,7 +15,7 @@
 			<ion-col size="12">
 				<ion-list>
 					<ion-item
-						[routerLink]="['/', 'homee', 'tabs', 'status', loadedStatuses[0].statusId]"
+						[routerLink]="['/', 'home', 'tabs', 'status', loadedStatuses[0].statusId]"
 					>
 						<ion-avatar style="background-color: lightgray;">
 							<ion-img [src]="loadedStatuses[0].imageUrl"></ion-img>
@@ -50,7 +50,8 @@
 						#slidingControl
 					>
 						<ion-item
-							[routerLink]="['/', 'home', 'tabs', 'status' person.statusId]"
+							[routerLink]="['/', 'home', 'tabs', 'status', person.statusId]"
+							routerLinkActive="router-link-active"
 						>
 							<ion-avatar style="background-color: lightgray;">
 								<ion-img [src]="person.imageUrl"></ion-img>

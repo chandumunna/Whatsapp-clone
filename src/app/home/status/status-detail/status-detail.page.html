@@ -1,1 +1,11 @@
-<h1>Single Status</h1>
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button defaultHref="/home/tabs/status"></ion-back-button>
+		</ion-buttons>
+		<ion-title>{{status.userName}} single status</ion-title>
+	</ion-toolbar>
+</ion-header>
+<ion-content>
+	<ion-img [src]="status.imageUrl"></ion-img>
+</ion-content>

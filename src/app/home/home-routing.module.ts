@@ -29,7 +29,7 @@ const routes: Routes = [
 							import('./status/status.module').then(m => m.StatusPageModule)
 					},
 					{
-						path: '/:statusId',
+						path: ':statusId',
 						loadChildren: () =>
 							import('./status/status-detail/status-detail.module').then(
 								m => m.StatusDetailPageModule
@@ -61,7 +61,7 @@ const routes: Routes = [
 							import('./chats/chats.module').then(m => m.ChatsPageModule)
 					},
 					{
-						path: '/:chatId',
+						path: ':chatId',
 						loadChildren: () =>
 							import('./chats/chat-detail/chat-detail.module').then(
 								m => m.ChatDetailPageModule
