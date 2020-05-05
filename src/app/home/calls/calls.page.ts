@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SegmentChangeEventDetail } from '@ionic/core';
 import { CallsService } from './calls.service';
 import { Call } from './call.model';
 import { IonItemSliding } from '@ionic/angular';
@@ -19,14 +20,26 @@ export class CallsPage implements OnInit {
 	onSearchChange(event) {
 		console.log('searching');
 	}
-	forVideoCall() {
-		console.log('video call started');
-	}
-	forVoiceCall() {
-		console.log('voice call started');
+	// forVideoCall() {
+	// 	console.log('video call started');
+	// }
+	// forVoiceCall() {
+	// 	console.log('voice call started');
+	// }
+	forCallerInfo() {
+		console.log('info clicked');
 	}
 	onDelete(slideEl: IonItemSliding) {
 		slideEl.close();
 		console.log('call deleted!!!');
+	}
+	segmentChanged(event: CustomEvent<SegmentChangeEventDetail>) {
+		console.log(event.detail);
+	}
+	onClickEdit() {
+		console.log('edit clicked');
+	}
+	onNewCall() {
+		console.log('new call clicked');
 	}
 }

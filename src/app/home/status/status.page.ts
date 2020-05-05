@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { IonItemSliding } from '@ionic/angular';
+import { IonItemSliding, ModalController } from '@ionic/angular';
 import { StatusService } from './status.service';
 import { Status } from './status.model';
+import { StatusListComponent } from './status-list/status-list.component';
 
 @Component({
 	selector: 'app-status',
@@ -11,7 +12,10 @@ import { Status } from './status.model';
 export class StatusPage implements OnInit {
 	loadedStatuses: Status[];
 
-	constructor(private statusService: StatusService) {}
+	constructor(
+		private statusService: StatusService,
+		private modalCtrl: ModalController
+	) {}
 
 	ngOnInit() {
 		this.loadedStatuses = this.statusService.Statuses;
@@ -26,5 +30,16 @@ export class StatusPage implements OnInit {
 	}
 	onPen() {
 		console.log('Status writter ovelay opened!');
+	}
+	onSelfStatus() {
+		console.log('This is the self status');
+		// this.modalCtrl
+		// 	.create({
+		// 		component: StatusListComponent
+		// 	})
+		// 	.then(modEl => {
+		// 		modEl.present();
+		// 	})
+		// 	.catch(err => console.error(err));
 	}
 }

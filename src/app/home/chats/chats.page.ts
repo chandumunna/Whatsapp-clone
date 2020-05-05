@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChatsService } from './chats.service';
 import { Chat } from './chat.model';
-import { IonItemSliding } from '@ionic/angular';
+import { IonItemSliding, ActionSheetController } from '@ionic/angular';
 
 @Component({
 	selector: 'app-chats',
@@ -10,7 +10,10 @@ import { IonItemSliding } from '@ionic/angular';
 })
 export class ChatsPage implements OnInit {
 	loadedChats: Chat[];
-	constructor(private chatService: ChatsService) {}
+	constructor(
+		private chatService: ChatsService,
+		private actionShtCtrl: ActionSheetController
+	) {}
 
 	ngOnInit() {
 		this.loadedChats = this.chatService.Chats;
@@ -31,6 +34,45 @@ export class ChatsPage implements OnInit {
 		console.log('message archived');
 	}
 	onMore(slideCtrl: IonItemSliding) {
-		slideCtrl.close();
+		this.actionShtCtrl
+			.create({
+				header: 'More',
+				buttons: [
+					{
+						text: 'Mute'
+					},
+					{
+						text: 'Group Info'
+					},
+					{
+						text: 'Export Chat'
+					},
+					{
+						text: 'Clear Chat'
+					},
+					{
+						text: 'Delete Chat',
+						role: 'destructive'
+					},
+					{
+						text: 'Cancel',
+						role: 'cancel'
+					}
+				]
+			})
+			.then(actionShtEl => {
+				actionShtEl.present();
+			})
+			.catch(err => console.error(err))
+			.finally(() => {
+				slideCtrl.close();
+			});
+	}
+
+	onClickEdit() {
+		console.log('edit clicked');
+	}
+	onNewChat() {
+		console.log('new chat clicked');
 	}
 }

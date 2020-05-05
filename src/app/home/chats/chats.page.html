@@ -1,12 +1,32 @@
 <ion-header>
-	<ion-toolbar>
-		<ion-title color="primary" style="font-size: 30px;">Chats</ion-title>
+	<ion-toolbar class="ion-no-padding">
+		<div class="edit">
+			<span>
+				<ion-text color="primary" (click)="onClickEdit()">
+					<h4>Edit</h4>
+				</ion-text>
+			</span>
+			<span>
+				<ion-icon
+					slot="end"
+					name="create"
+					mode="ios"
+					color="primary"
+					(click)="onNewChat()"
+				></ion-icon>
+			</span>
+		</div>
+		<!-- <ion-title color="primary">
+			<h1 style="font-size: 30px;">Chats</h1>
+    </ion-title> -->
+		<h1>Chats</h1>
+		<ion-searchbar
+			placeholder="Search..."
+			(ionChange)="onSearchChange($event)"
+			[debounce]="250"
+			mode="ios"
+		></ion-searchbar>
 	</ion-toolbar>
-	<ion-searchbar
-		placeholder="Search..."
-		(ionChange)="onSearchChange($event)"
-		[debounce]="250"
-	></ion-searchbar>
 </ion-header>
 
 <ion-content class="ion-no-padding">
@@ -30,7 +50,7 @@
 
 						<ion-item-options side="start">
 							<ion-item-option color="primary" (click)="onRead(slidingControl)">
-								<ion-icon slot="icon-only" name="chatbubbles">Read</ion-icon>
+								<ion-icon slot="icon-only" name="done-all">Read</ion-icon>
 							</ion-item-option>
 
 							<ion-item-option
@@ -46,14 +66,16 @@
 								style="background-color: lightgray;"
 								(click)="onMore(slidingControl)"
 							>
-								<ion-icon slot="icon-only" name="text">More</ion-icon>
+								<ion-icon slot="icon-only" name="more" mode="ios"
+									>More</ion-icon
+								>
 							</ion-item-option>
 
 							<ion-item-option
 								color="primary"
 								(click)="onArchive(slidingControl)"
 							>
-								<ion-icon slot="icon-only" name="card">Archive</ion-icon>
+								<ion-icon slot="icon-only" name="archive">Archive</ion-icon>
 							</ion-item-option>
 						</ion-item-options>
 					</ion-item-sliding>

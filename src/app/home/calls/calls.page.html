@@ -1,12 +1,37 @@
 <ion-header>
 	<ion-toolbar>
-		<ion-title style="font-size: 30px;">Calls</ion-title>
+		<div class="edit">
+			<span>
+				<ion-text color="primary" (click)="onClickEdit()">
+					<h4>Edit</h4>
+				</ion-text>
+			</span>
+			<ion-segment (ionChange)="segmentChanged($event)">
+				<ion-segment-button value="all" checked>
+					<ion-label>All Calls</ion-label>
+				</ion-segment-button>
+				<ion-segment-button value="missed">
+					<ion-label>Missed</ion-label>
+				</ion-segment-button>
+			</ion-segment>
+			<span>
+				<ion-icon
+					slot="end"
+					name="create"
+					mode="ios"
+					color="primary"
+					(click)="onNewCall()"
+				></ion-icon>
+			</span>
+		</div>
+		<!-- <ion-title style="font-size: 30px;">Calls</ion-title> -->
+		<h1>Calls</h1>
+		<ion-searchbar
+			placeholder="Search..."
+			(ionChange)="onSearchChange($event)"
+			[debounce]="250"
+		></ion-searchbar>
 	</ion-toolbar>
-	<ion-searchbar
-		placeholder="Search..."
-		(ionChange)="onSearchChange($event)"
-		[debounce]="250"
-	></ion-searchbar>
 </ion-header>
 
 <ion-content class="ion-on-padding">
@@ -28,16 +53,16 @@
 							</ion-label>
 							<ion-icon
 								slot="end"
-								name="videocam"
-								(click)="forVideoCall()"
-								style="color: lightgray;"
+								name="information-circle-outline"
+								(click)="forCallerInfo()"
+								color="primary"
 							></ion-icon>
-							<ion-icon
+							<!-- <ion-icon
 								slot="end"
 								name="call"
 								(click)="forVoiceCall()"
 								style="color: lightgray;"
-							></ion-icon>
+							></ion-icon> -->
 						</ion-item>
 
 						<ion-item-options side="end">

@@ -1,12 +1,13 @@
 <ion-header>
 	<ion-toolbar>
-		<ion-title style="font-size: 30px;">Status</ion-title>
+		<!-- <ion-title style="font-size: 30px;">Status</ion-title> -->
+		<h1>Status</h1>
+		<ion-searchbar
+			placeholder="Search..."
+			(ionChange)="onSearchChange($event)"
+			[debounce]="250"
+		></ion-searchbar>
 	</ion-toolbar>
-	<ion-searchbar
-		placeholder="Search..."
-		(ionChange)="onSearchChange($event)"
-		[debounce]="250"
-	></ion-searchbar>
 </ion-header>
 
 <ion-content>
@@ -14,14 +15,12 @@
 		<ion-row>
 			<ion-col size="12">
 				<ion-list>
-					<ion-item
-						[routerLink]="['/', 'home', 'tabs', 'status', loadedStatuses[0].statusId]"
-					>
+					<ion-item>
 						<ion-avatar style="background-color: lightgray;">
 							<ion-img [src]="loadedStatuses[0].imageUrl"></ion-img>
 							<ion-badge color="primary" slot="start">+</ion-badge>
 						</ion-avatar>
-						<ion-label>
+						<ion-label (click)="onSelfStatus()">
 							<h4>My Status</h4>
 							<p>Add to my status</p>
 						</ion-label>

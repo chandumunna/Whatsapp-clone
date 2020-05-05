@@ -1,9 +1,85 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>settings</ion-title>
-  </ion-toolbar>
+	<ion-toolbar>
+		<h1>Settings</h1>
+		<!-- <ion-title>settings</ion-title> -->
+	</ion-toolbar>
 </ion-header>
 
 <ion-content>
+	<ion-item detail style="margin: 20px 0;" (click)="userDetails()">
+		<ion-avatar style="background-color: lightgray;">
+			<ion-img [src]="user.imageUrl"></ion-img>
+		</ion-avatar>
+		<ion-label style="padding-left: 10px; letter-spacing: 1.3;">
+			<h2>{{user.userName}}</h2>
+			<p>{{user.bio}}</p>
+		</ion-label>
+	</ion-item>
 
+	<ion-grid style="color: lightgrey;">
+		<ion-row>
+			<ion-col size="12">
+				<ion-list>
+					<ion-item detail>
+						<ion-icon name="star" style="color: yellow;"></ion-icon>
+						<ion-label>
+							<p>Starred Messages</p>
+						</ion-label>
+					</ion-item>
+					<ion-item detail>
+						<ion-icon name="desktop" style="color: darkgreen;"></ion-icon>
+						<ion-label>
+							<p>WhatsApp Web/Desktop</p>
+						</ion-label>
+					</ion-item>
+				</ion-list>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col size="12">
+				<ion-list>
+					<ion-item detail>
+						<ion-icon name="key" color="primary"></ion-icon>
+						<ion-label>
+							<p>Account</p>
+						</ion-label>
+					</ion-item>
+					<ion-item detail>
+						<ion-icon name="text" style="color: green;"></ion-icon>
+						<ion-label>
+							<p>Chats</p>
+						</ion-label>
+					</ion-item>
+					<ion-item detail>
+						<ion-icon name="alert" color="danger"></ion-icon>
+						<ion-label>
+							<p>Notifications</p>
+						</ion-label>
+					</ion-item>
+					<ion-item detail>
+						<ion-icon name="swap" style="color: green;"></ion-icon>
+						<ion-label>
+							<p>Data and Storage Usage</p>
+						</ion-label>
+					</ion-item>
+				</ion-list>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col size="12">
+				<ion-item detail (click)="help()">
+					<ion-icon name="information-circle" color="primary"></ion-icon>
+					<ion-label>
+						<p>Help</p>
+					</ion-label>
+				</ion-item>
+				<ion-item detail (click)="share()">
+					<ion-icon name="heart" color="danger"></ion-icon>
+					<ion-label>
+						<p>Tell a Friend</p>
+					</ion-label>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
 </ion-content>
