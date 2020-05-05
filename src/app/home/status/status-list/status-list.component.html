@@ -1,13 +1,13 @@
 <ion-header>
 	<ion-toolbar>
-		<ion-buttons slot="start" defaultHref="/home/tabs/status">
-			<ion-back-button></ion-back-button>
-		</ion-buttons>
-		<ion-title>{{ singleStatus.userName }}</ion-title>
+		<ion-button (click)="onClick()" fill="clear">
+			<ion-icon slot="start" name="arrow-round-back" color="primary"></ion-icon>
+		</ion-button>
+		<ion-title></ion-title>
 	</ion-toolbar>
 </ion-header>
 
-<ion-content>
+<!-- <ion-content>
 	<ion-list>
 		<ion-item>
 			<ion-thumbnail>
@@ -16,6 +16,6 @@
 			<ion-label>Awesome Label</ion-label>
 		</ion-item>
 	</ion-list>
-</ion-content>
+</ion-content> -->
 
 <!-- <h1>Self Status</h1> -->

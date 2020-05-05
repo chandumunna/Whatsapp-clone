@@ -10,7 +10,7 @@ import { StatusService } from '../status.service';
 	styleUrls: ['./status-detail.component.scss']
 })
 export class StatusDetailComponent implements OnInit {
-	status: Status;
+	status: Status[] = this.statusService.Statuses;
 	constructor(
 		private router: Router,
 		private route: ActivatedRoute,

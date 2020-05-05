@@ -3,6 +3,9 @@ import { IonItemSliding, ModalController } from '@ionic/angular';
 import { StatusService } from './status.service';
 import { Status } from './status.model';
 import { StatusListComponent } from './status-list/status-list.component';
+import { StatusDetailComponent } from './status-detail/status-detail.component';
+import { CameraComponent } from './camera/camera.component';
+import { PenComponent } from './pen/pen.component';
 
 @Component({
 	selector: 'app-status',
@@ -26,10 +29,24 @@ export class StatusPage implements OnInit {
 		slideCtrl.close();
 	}
 	onCamera() {
-		console.log('Camera toggled!!');
+		// console.log('Camera toggled!!');
+		this.modalCtrl
+			.create({
+				component: CameraComponent
+			})
+			.then(el => {
+				el.present();
+			});
 	}
 	onPen() {
-		console.log('Status writter ovelay opened!');
+		// console.log('Status writter ovelay opened!');
+		this.modalCtrl
+			.create({
+				component: PenComponent
+			})
+			.then(mdEl => {
+				mdEl.present();
+			});
 	}
 	onSelfStatus() {
 		// console.log('This is the self status');
@@ -46,7 +63,7 @@ export class StatusPage implements OnInit {
 	onClick(personId) {
 		this.modalCtrl
 			.create({
-				component: StatusListComponent,
+				component: StatusDetailComponent,
 				id: personId
 			})
 			.then(modEl => {

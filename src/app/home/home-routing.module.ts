@@ -27,13 +27,6 @@ const routes: Routes = [
 						path: '',
 						loadChildren: () =>
 							import('./status/status.module').then(m => m.StatusPageModule)
-					},
-					{
-						path: ':statusId',
-						loadChildren: () =>
-							import('./status/status-detail/status-detail.module').then(
-								m => m.StatusDetailPageModule
-							)
 					}
 				]
 			},
