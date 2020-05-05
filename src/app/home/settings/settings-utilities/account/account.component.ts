@@ -1,14 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-account',
-  templateUrl: './account.component.html',
-  styleUrls: ['./account.component.scss'],
+	selector: 'app-account',
+	templateUrl: './account.component.html',
+	styleUrls: ['./account.component.scss']
 })
 export class AccountComponent implements OnInit {
+	constructor(private modalCtrl: ModalController) {}
 
-  constructor() { }
+	ngOnInit() {}
 
-  ngOnInit() {}
-
+	onClick() {
+		this.modalCtrl.dismiss(null, null, 'account');
+	}
 }

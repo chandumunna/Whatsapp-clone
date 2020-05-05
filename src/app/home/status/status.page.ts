@@ -32,14 +32,25 @@ export class StatusPage implements OnInit {
 		console.log('Status writter ovelay opened!');
 	}
 	onSelfStatus() {
-		console.log('This is the self status');
-		// this.modalCtrl
-		// 	.create({
-		// 		component: StatusListComponent
-		// 	})
-		// 	.then(modEl => {
-		// 		modEl.present();
-		// 	})
-		// 	.catch(err => console.error(err));
+		// console.log('This is the self status');
+		this.modalCtrl
+			.create({
+				component: StatusListComponent
+			})
+			.then(modEl => {
+				modEl.present();
+			})
+			.catch(err => console.error(err));
+	}
+
+	onClick(personId) {
+		this.modalCtrl
+			.create({
+				component: StatusListComponent,
+				id: personId
+			})
+			.then(modEl => {
+				modEl.present();
+			});
 	}
 }

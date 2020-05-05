@@ -20,13 +20,13 @@
 		<ion-row>
 			<ion-col size="12">
 				<ion-list>
-					<ion-item detail>
+					<ion-item detail (click)="starredMessages()">
 						<ion-icon name="star" style="color: yellow;"></ion-icon>
 						<ion-label>
 							<p>Starred Messages</p>
 						</ion-label>
 					</ion-item>
-					<ion-item detail>
+					<ion-item detail (click)="forDesktop()">
 						<ion-icon name="desktop" style="color: darkgreen;"></ion-icon>
 						<ion-label>
 							<p>WhatsApp Web/Desktop</p>
@@ -38,25 +38,25 @@
 		<ion-row>
 			<ion-col size="12">
 				<ion-list>
-					<ion-item detail>
+					<ion-item detail (click)="accountDetails()">
 						<ion-icon name="key" color="primary"></ion-icon>
 						<ion-label>
 							<p>Account</p>
 						</ion-label>
 					</ion-item>
-					<ion-item detail>
+					<ion-item detail (click)="chatHistory()">
 						<ion-icon name="text" style="color: green;"></ion-icon>
 						<ion-label>
 							<p>Chats</p>
 						</ion-label>
 					</ion-item>
-					<ion-item detail>
+					<ion-item detail (click)="forNotifications()">
 						<ion-icon name="alert" color="danger"></ion-icon>
 						<ion-label>
 							<p>Notifications</p>
 						</ion-label>
 					</ion-item>
-					<ion-item detail>
+					<ion-item detail (click)="dataUsage()">
 						<ion-icon name="swap" style="color: green;"></ion-icon>
 						<ion-label>
 							<p>Data and Storage Usage</p>

@@ -6,6 +6,7 @@
 			placeholder="Search..."
 			(ionChange)="onSearchChange($event)"
 			[debounce]="250"
+			mode="ios"
 		></ion-searchbar>
 	</ion-toolbar>
 </ion-header>
@@ -49,7 +50,7 @@
 						#slidingControl
 					>
 						<ion-item
-							[routerLink]="['/', 'home', 'tabs', 'status', person.statusId]"
+							(click)="onClick(person.id)"
 							routerLinkActive="router-link-active"
 						>
 							<ion-avatar style="background-color: lightgray;">

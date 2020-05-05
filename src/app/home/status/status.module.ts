@@ -11,6 +11,7 @@ import { StatusListComponent } from './status-list/status-list.component';
 
 @NgModule({
 	imports: [CommonModule, FormsModule, IonicModule, StatusPageRoutingModule],
-	declarations: [StatusPage, StatusListComponent]
+	declarations: [StatusPage, StatusListComponent],
+	entryComponents: [StatusListComponent]
 })
 export class StatusPageModule {}

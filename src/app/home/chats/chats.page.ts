@@ -39,20 +39,35 @@ export class ChatsPage implements OnInit {
 				header: 'More',
 				buttons: [
 					{
-						text: 'Mute'
+						text: 'Mute',
+						handler: () => {
+							console.log('mute chat');
+						}
 					},
 					{
-						text: 'Group Info'
+						text: 'Group Info',
+						handler: () => {
+							console.log('chat info');
+						}
 					},
 					{
-						text: 'Export Chat'
+						text: 'Export Chat',
+						handler: () => {
+							console.log('export chat');
+						}
 					},
 					{
-						text: 'Clear Chat'
+						text: 'Clear Chat',
+						handler: () => {
+							console.log('clear chat');
+						}
 					},
 					{
 						text: 'Delete Chat',
-						role: 'destructive'
+						role: 'destructive',
+						handler: () => {
+							console.log('delete chat');
+						}
 					},
 					{
 						text: 'Cancel',
