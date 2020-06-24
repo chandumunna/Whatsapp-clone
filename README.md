@@ -16,7 +16,7 @@ Image 1|Image 2|Image 3
 
 - These are just some images of the UI of the application
 
-Images1|images2|images3
+Image 4|Image 2|Image 6
 -------|-------|-------
 ![settings](https://github.com/Lihemen/Whatsapp-clone/blob/master/src/assets/images/whatsapp-clone-images/settings.png)| ![accounts](https://github.com/Lihemen/Whatsapp-clone/blob/master/src/assets/images/whatsapp-clone-images/account.png)| ![notifications](https://github.com/Lihemen/Whatsapp-clone/blob/master/src/assets/images/whatsapp-clone-images/notifications.png)|
 
