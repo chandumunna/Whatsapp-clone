@@ -1,8 +1,48 @@
 <ion-header>
 	<ion-toolbar>
-		<ion-button (click)="onClick()" fill="clear">
-			<ion-icon slot="start" name="arrow-round-back" color="primary"></ion-icon>
-		</ion-button>
+		<div
+			(click)="onClick()"
+			style="display: flex; align-items: center;"
+			color="primary"
+		>
+			<ion-icon name="arrow-back" color="primary"></ion-icon>
+			<p style="color: #3880ff;">Settings</p>
+		</div>
 		<ion-title>Account</ion-title>
 	</ion-toolbar>
 </ion-header>
+
+<ion-content>
+	<ion-grid class="ion-no-padding">
+		<ion-row>
+			<ion-col size="12">
+				<ion-list>
+					<ion-item detail>
+						<ion-label><p>Privacy</p> </ion-label>
+					</ion-item>
+					<ion-item detail>
+						<ion-label><p>Security</p></ion-label>
+					</ion-item>
+					<ion-item detail>
+						<ion-label><p>Two-Step Verification</p> </ion-label>
+					</ion-item>
+					<ion-item detail>
+						<ion-label><p>Change Number</p> </ion-label>
+					</ion-item>
+				</ion-list>
+			</ion-col>
+		</ion-row>
+		<ion-row style="margin-top: 20px">
+			<ion-col size="12">
+				<ion-list>
+					<ion-item detail>
+						<ion-label><p>Request Account Info</p></ion-label>
+					</ion-item>
+					<ion-item detail>
+						<ion-label><p>Delete My Account</p></ion-label>
+					</ion-item>
+				</ion-list>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>

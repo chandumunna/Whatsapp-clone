@@ -1,8 +1,13 @@
 <ion-header>
 	<ion-toolbar>
-		<ion-button (click)="onClick()" fill="clear">
-			<ion-icon slot="start" name="arrow-round-back" color="primary"></ion-icon>
-		</ion-button>
-		<ion-title>WhatsApp Web</ion-title>
+		<div
+			(click)="onClick()"
+			style="display: flex; align-items: center;"
+			color="primary"
+		>
+			<ion-icon name="arrow-back" color="primary"></ion-icon>
+			<p style="color: #3880ff;">Settings</p>
+		</div>
+		<ion-title mode="ios">WhatsApp Web</ion-title>
 	</ion-toolbar>
 </ion-header>

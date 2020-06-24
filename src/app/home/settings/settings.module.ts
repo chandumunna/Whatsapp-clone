@@ -16,6 +16,7 @@ import { NotificationsComponent } from './settings-utilities/notifications/notif
 import { StarredComponent } from './settings-utilities/starred/starred.component';
 import { WebComponent } from './settings-utilities/web/web.component';
 import { UserComponent } from './settings-utilities/user/user.component';
+import { ClearComponent } from './settings-utilities/chats/clear/clear.component';
 
 @NgModule({
 	imports: [CommonModule, FormsModule, IonicModule, SettingsPageRoutingModule],
@@ -28,7 +29,8 @@ import { UserComponent } from './settings-utilities/user/user.component';
 		NotificationsComponent,
 		StarredComponent,
 		UserComponent,
-		WebComponent
+		WebComponent,
+		ClearComponent,
 	],
 	entryComponents: [
 		AccountComponent,
@@ -38,7 +40,8 @@ import { UserComponent } from './settings-utilities/user/user.component';
 		NotificationsComponent,
 		StarredComponent,
 		UserComponent,
-		WebComponent
-	]
+		WebComponent,
+		ClearComponent,
+	],
 })
 export class SettingsPageModule {}

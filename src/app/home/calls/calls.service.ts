@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Call } from './call.model';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class CallsService {
 	private _callLog: Call[] = [
@@ -21,8 +21,13 @@ export class CallsService {
 			'My love',
 			'incoming'
 		),
-		new Call('../assets/images/no-img.png', 'yesterday', 'Ter', 'outgoing'),
-		new Call('../assets/images/no-img.png', 'yesterday', 'Funny Guy', 'missed')
+		new Call('../assets/images/no-img.png', '2 weeks ago', 'Ter', 'outgoing'),
+		new Call(
+			'../assets/images/no-img.png',
+			'2 weeks ago',
+			'Funny Guy',
+			'missed'
+		),
 	];
 
 	constructor() {}

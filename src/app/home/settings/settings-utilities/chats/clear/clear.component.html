@@ -1,0 +1,60 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button defaultHref="" (click)="close()"></ion-back-button>
+		</ion-buttons>
+		<ion-title>{{ title }} Chat</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-grid class="ion-no-padding">
+		<ion-row style="align-items: center !important;">
+			<ion-col size="4" offset="4">
+				<div class="warning">
+					<ion-icon
+						name="warning"
+						color="danger"
+						fill="outline"
+						style="font-size: 2rem;"
+					></ion-icon>
+				</div>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col size="12">
+				<strong>Clearing your chats will</strong>
+				<ul style="list-style: disc;">
+					<li>Delete your messages history on your phone</li>
+					<li>Delete all sent and received media</li>
+				</ul>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col size="12" style="display: flex; flex-direction: column;">
+				<small>ENTER YOUR PHONE NUMBER</small>
+				<ion-item detail>
+					<ion-label color="primary">Nigeria</ion-label>
+				</ion-item>
+				<ion-item>
+					<ion-input type="text" placeholder="your phone number"></ion-input>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col size="12">
+				<ion-item
+					style="
+						align-items: center;
+						justify-content: center;
+						padding: 1rem 20%;
+					"
+				>
+					<ion-label color="danger" (click)="clearChats()"
+						>Clear all chats</ion-label
+					>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>

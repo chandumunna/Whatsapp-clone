@@ -1,8 +1,68 @@
 <ion-header>
 	<ion-toolbar>
-		<ion-button (click)="onClick()" fill="clear">
-			<ion-icon slot="start" name="arrow-round-back" color="primary"></ion-icon>
-		</ion-button>
-		<ion-title>Chats</ion-title>
+		<div
+			(click)="onClick()"
+			style="display: flex; align-items: center;"
+			color="primary"
+		>
+			<ion-icon name="arrow-back" color="primary"></ion-icon>
+			<p style="color: #3880ff;">Settings</p>
+		</div>
+		<ion-title mode="ios">Chats</ion-title>
 	</ion-toolbar>
 </ion-header>
+
+<ion-content>
+	<ion-grid class="ion-no-padding">
+		<ion-row>
+			<ion-col size="12">
+				<ion-item detail>
+					<ion-label><p>Chat Wallpaper</p></ion-label>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+		<ion-row style="margin-top: 30px;">
+			<ion-col size="12">
+				<ion-item>
+					<ion-label detail>
+						<p>
+							Save to Camera Roll
+						</p>
+						<br />
+						<small style="color: lightgrey;">
+							Automatically save photos and videos you <br />
+							receive to your phone's Camera Roll
+						</small>
+					</ion-label>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+		<ion-row style="margin-top: 30px;">
+			<ion-col size="12">
+				<ion-list>
+					<ion-item (click)="onArchive()">
+						<ion-label color="primary">
+							<p>
+								Archive Chats
+							</p>
+						</ion-label>
+					</ion-item>
+					<ion-item (click)="onClear()">
+						<ion-label color="danger">
+							<p>
+								Clear Chats
+							</p>
+						</ion-label>
+					</ion-item>
+					<ion-item (click)="onDelete()">
+						<ion-label color="danger">
+							<p>
+								Delete Chats
+							</p>
+						</ion-label>
+					</ion-item>
+				</ion-list>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>

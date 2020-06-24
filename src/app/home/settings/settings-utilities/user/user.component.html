@@ -1,7 +1,55 @@
 <ion-header>
 	<ion-toolbar>
-		<ion-button (click)="onClick()" fill="clear">
-			<ion-icon slot="start" name="arrow-round-back" color="primary"></ion-icon>
-		</ion-button>
+		<div
+			(click)="onClick()"
+			style="display: flex; align-items: center;"
+			color="primary"
+		>
+			<ion-icon name="arrow-back" color="primary"></ion-icon>
+			<p style="color: #3880ff;">Settings</p>
+		</div>
 	</ion-toolbar>
 </ion-header>
+
+<ion-content>
+	<ion-grid>
+		<ion-row>
+			<ion-col size="12">
+				<ion-item>
+					<ion-avatar slot="start" (click)="onAddPhoto()">
+						<p>add photo</p>
+					</ion-avatar>
+					<ion-label
+						><p>
+							Enter your name and add an <br />
+							optional profile picture
+						</p></ion-label
+					>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+		<ion-row class="ion-margin-top">
+			<ion-col size="12">
+				<ion-item>
+					<ion-label>Hemense Lan</ion-label>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+		<ion-row class="ion-margin-top">
+			<ion-col size="12">
+				<small>PHONE NUMBER</small>
+				<ion-item>
+					<ion-label>+234 708 285 5649</ion-label>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+		<ion-row class="ion-margin-top">
+			<ion-col size="12">
+				<small>ABOUT</small>
+				<ion-item detail>
+					<ion-label>Available</ion-label>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>

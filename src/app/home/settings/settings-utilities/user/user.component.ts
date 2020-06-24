@@ -14,4 +14,7 @@ export class UserComponent implements OnInit {
 	onClick() {
 		this.modalCtrl.dismiss(null, null, 'user');
 	}
+	onAddPhoto() {
+		console.log('To add profile picture');
+	}
 }

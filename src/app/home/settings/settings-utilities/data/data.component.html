@@ -1,8 +1,70 @@
 <ion-header>
 	<ion-toolbar>
-		<ion-button (click)="onClick()" fill="clear">
-			<ion-icon slot="start" name="arrow-round-back" color="primary"></ion-icon>
-		</ion-button>
-		<ion-title>Data and Storage Usage</ion-title>
+		<div
+			(click)="onClick()"
+			style="display: flex; align-items: center;"
+			color="primary"
+		>
+			<ion-icon name="arrow-back" color="primary"></ion-icon>
+			<p style="color: #3880ff;">Settings</p>
+		</div>
+		<ion-title style="font-size: 12px;">Data and Storage Usage</ion-title>
 	</ion-toolbar>
 </ion-header>
+
+<ion-content>
+	<ion-grid>
+		<ion-row>
+			<ion-col size="12">
+				<small style="color: lightgrey;">MEDIA AUTO-DOWNLOAD</small>
+				<ion-list>
+					<ion-item detail>
+						<ion-label><p>Photos</p> </ion-label>
+					</ion-item>
+					<ion-item detail>
+						<ion-label><p>Audio</p></ion-label>
+					</ion-item>
+					<ion-item detail>
+						<ion-label><p>Video</p></ion-label>
+					</ion-item>
+					<ion-item detail>
+						<ion-label><p>Sound</p></ion-label>
+					</ion-item>
+					<small
+						class="ion-padding"
+						style="align-items: flex-start; display: flex;"
+						>Voice Messages are always automatically downloaded for the best
+						communication experience</small
+					>
+				</ion-list>
+			</ion-col>
+		</ion-row>
+		<ion-row style="margin-top: 10px;">
+			<ion-col size="12">
+				<small style="color: lightgrey;">CALL SETTINGS</small>
+				<ion-list>
+					<ion-item detail>
+						<ion-label><p>Low Data Usage</p> </ion-label>
+					</ion-item>
+					<small
+						class="ion-padding"
+						style="align-items: flex-start; display: flex;"
+						>Lower the amount of data used during a call on cellular
+					</small>
+				</ion-list>
+			</ion-col>
+		</ion-row>
+		<ion-row style="margin-top: 10px;">
+			<ion-col size="12">
+				<ion-list>
+					<ion-item detail>
+						<ion-label><p>Network Usage</p> </ion-label>
+					</ion-item>
+					<ion-item detail>
+						<ion-label><p>Storage Usage</p> </ion-label>
+					</ion-item>
+				</ion-list>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>
